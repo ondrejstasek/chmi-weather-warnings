@@ -1,0 +1,8 @@
+{
+  "domain": "chmi_weather_warnings",
+  "name": "ČHMÚ - Výstrahy",
+  "codeowners": ["@ondrejstasek"],
+  "requirements": ["dateutil"],
+  "version": "0.1.0",
+  "config_flow": true
+}
