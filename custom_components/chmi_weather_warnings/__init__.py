@@ -1,4 +1,1 @@
-"""ČHMÚ - Výstrahy"""
-
-from .const import *
-
+"""The CHMI component."""
