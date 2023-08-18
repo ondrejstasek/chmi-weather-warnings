@@ -169,7 +169,7 @@ class CHMISensor(
                     "description": alert["description"],
                     "severity": alert["stupenNebezpeci"],
                     "start": parse(alert["onset"]),
-                    "end": parse(alert["expires"])
+                    "end": parse(alert["expires"]) if alert["expires"] is not None else None
                 }
             )
         return events
