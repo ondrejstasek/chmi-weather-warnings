@@ -1,8 +1,8 @@
 {
   "domain": "chmi_weather_warnings",
-  "name": "ČHMÚ",
+  "name": "ČHMÚ - Výstrahy",
   "codeowners": ["@ondrejstasek"],
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "version": "0.1.0"
+  "version": "1.1.0"
 }
