@@ -48,7 +48,9 @@ from .const import CHMI_URL, DOMAIN, ORP_ID, INTERVAL
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
-        vol.Required(ORP_ID): cv.positive_int,
+        vol.Required(ORP_IDS): vol.All(
+            cv.ensure_list, [cv.positive_int]
+        ),
         vol.Optional(INTERVAL, default=60): cv.positive_int
     }
 )
@@ -75,9 +77,10 @@ async def async_setup_platform(
         state_class=SensorStateClass.MEASUREMENT
     )
 
-    sensors = [
-        CHMISensor(coordinator, description, entry[ORP_ID])
-    ]
+    def createSensor(orpId):
+        return CHMISensor(coordinator, description, orpId)
+
+    sensors = map(createSensor, entry[ORP_IDS])
 
     add_entities(sensors)
 
