@@ -44,7 +44,7 @@ import homeassistant.helpers.config_validation as cv
 import logging
 _LOGGER = logging.getLogger(__name__)
 
-from .const import CHMI_URL, DOMAIN, ORP_ID, INTERVAL
+from .const import CHMI_URL, DOMAIN, ORP_IDS, INTERVAL
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
